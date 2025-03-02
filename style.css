@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
+    background: linear-gradient(#13a555 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
     height: 100vh;
     display: flex;
     flex-direction: column; /* Para empilhar os elementos verticalmente */
@@ -35,8 +35,8 @@ body::before {
     align-items: center;
     justify-content: space-between;
     border-radius: 24px;
-    border: 1px solid #1875E8;
-    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    border: 1px solid #13a555;
+    box-shadow: 4px 4px 20px 0px rgba(1, 14, 5, 0.15);
     background-image: url("img/Ruido.png");
     background-size: 100% 100%;
     position: relative;
@@ -59,13 +59,14 @@ body::before {
 
 .container__botao {
     border-radius: 16px;
-    background: #1875E8;
+    background: #13a555;
     padding: 16px 24px;
     width: 100%;
     font-size: 24px;
     font-weight: 700;
     border: none;
     margin-top: 16px;
+    text-decoration: none;
 }
 
 .container__texto {
@@ -73,7 +74,7 @@ body::before {
 }
 
 .container__texto-azul {
-    color: #1875E8;
+    color: #13a555;
 }
 
 h1 {

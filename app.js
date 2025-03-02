@@ -46,3 +46,51 @@ document.getElementById("mensagem").innerHTML = `
     <strong>Carnes:</strong> ${carnes.join(", ")}<br>
     <strong>Legumes:</strong> ${legumes.join(", ")}
 `;
+//Função para remover um item da lista chamada pelo botão
+function removerItem() {
+    let desejaRemover = confirm("Gostaria de remover um item da lista de compras?");
+    
+    if (desejaRemover) {
+        let produtoRemover = prompt("Digite o nome do produto que deseja remover:");
+
+        // Cria um array com todas as categorias e verificamos onde o produto está
+        let categorias = {
+            frutas: frutas,
+            laticínios: laticínios,
+            congelados: congelados,
+            cereais: cereais,
+            carnes: carnes,
+            legumes: legumes
+        };
+
+        let itemEncontrado = false;
+
+        for (let categoria in categorias) {
+            let index = categorias[categoria].indexOf(produtoRemover);
+
+            if (index !== -1) {
+                categorias[categoria].splice(index, 1); // Remove o item da lista
+                itemEncontrado = true;
+                alert(`O item "${produtoRemover}" foi removido da categoria "${categoria}".`);
+                break; // Sai do loop após encontrar e remover o item
+            }
+        }
+
+        if (!itemEncontrado) {
+            alert("Item não encontrado na lista.");
+        }
+    } else {
+        alert("Operação cancelada! Nenhum item foi removido.");
+    }
+
+    // Atualiza a exibição da lista no HTML
+    document.getElementById("mensagem").innerHTML = `
+        <strong>Lista de Compras Atualizada:</strong><br>
+        <strong>Frutas:</strong> ${frutas.join(", ")}<br>
+        <strong>Laticínios:</strong> ${laticínios.join(", ")}<br>
+        <strong>Congelados:</strong> ${congelados.join(", ")}<br>
+        <strong>Cereais:</strong> ${cereais.join(", ")}<br>
+        <strong>Carnes:</strong> ${carnes.join(", ")}<br>
+        <strong>Legumes:</strong> ${legumes.join(", ")}
+    `;
+}
